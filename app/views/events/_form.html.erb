@@ -1,0 +1,13 @@
+<div class="form-wrapper">
+  <%= simple_form_for @event, html: { class: 'form-horizontal', multipart: true } do |form| %>
+  <div class="form-group">
+    <%= form.input :photo, as: :file %>
+    <div class="form-group.text-center">
+      <%= form.input :caption %>
+      <div class="form-group.text-center">
+        <%= form.button :submit, class: 'btn-success' %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

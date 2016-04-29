@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lifegram</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img alt="Eventgram" src="...">
+        </a>
+      </div>
+      <div class="navbar-text navbar-right">
+      <%= link_to "New Event", new_event_path %>
+      <%= link_to "Login", '#' %>
+      <%= link_to "Register", '#'%>
+      </div>
+    </div>
+  </nav>
+
+  <%= yield %>
+
+</body>
+</html>
