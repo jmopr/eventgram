@@ -14,8 +14,10 @@ class EventsController < ApplicationController
 
   def create
     if @event = Event.create(event_params)
+      flash[:success] = "Your event has been created!"
       redirect_to events_path
     else
+      flash.now[:alert] = "Your new post couldn't be created! Please check the form."
       render :new
     end
   end
@@ -25,8 +27,10 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
+      flash[:success] = "Event updated."
       redirect_to event_path(@event)
     else
+      flash.now[:alert] = "Update failed. Please check the form."
       render :edit
     end
   end
