@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users
   # root to: "home#index"
   root 'events#index'
-  devise_scope :user do
-    get "sign_in", to: "devise/sessions#new"
-  end
+  # devise_scope :user do
+  #   get "sign_in", to: "devise/sessions#new"
+  #   get "users/sign_up", to: "devise/registrations#new"
+  # end
+  # devise_for :users, :controllers => { registrations: 'registrations' }
   resources :events
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
